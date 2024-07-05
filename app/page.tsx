@@ -433,8 +433,36 @@ function Testimonials() {
         heading="We provide the best service for you"
         subheading="Our customers have a lot to say"
       >
-        <div>
-          <TestimonialCard bgImg="/" />
+        <div className="flex px-28 gap-1">
+          <TestimonialCard
+            bgImg="/testimonial-1.png"
+            profile="/user-2.png"
+            profileName="Martha Ndalale"
+            position="Maselesele, Kasungu"
+          >
+            Excellent experience! The project was completed on time, and our
+            roof has never looked better.
+          </TestimonialCard>
+
+          <TestimonialCard
+            bgImg="/testimonial-2.png"
+            profile="/user-3.png"
+            profileName="Boka Khama"
+            position="Chiziki, Ntcheu"
+          >
+            Outstanding service! Our roof looks amazing, and the team was
+            professional and efficient.
+          </TestimonialCard>
+
+          <TestimonialCard
+            bgImg="/testimonial-3.png"
+            profile="/user-4.png"
+            profileName="Samson Wadyiko"
+            position="Sipitati, Balaka"
+          >
+            Highly recommend! Affordable prices and top-notch quality. Our new
+            siding transformed our home.
+          </TestimonialCard>
         </div>
       </Section>
     </div>
@@ -456,20 +484,34 @@ function TestimonialCard({
 }) {
   return (
     <div>
-      <div>
-        <div>
-          <Image src={bgImg} alt="alt" fill />
+      <div className="relative flex flex-col">
+        <div className="relative h-60 w-full">
+          <Image
+            src={bgImg}
+            alt="alt"
+            fill
+            className="inset-0"
+            objectFit="cover"
+          />
         </div>
-        <div>
-          <Image src={profile} alt="alt" fill />
+        <div className="relative  mx-auto -top-[50px]  border-4 border-white rounded-full size-[100px]">
+          <Image
+            src={profile}
+            alt="alt"
+            fill
+            className="inset-0"
+            objectFit="cover"
+          />
         </div>
-        <div>
+        <div className="flex flex-col items-center -mt-7">
           <div>
-            <h3>{profileName}</h3>
-            <span>{position}</span>
+            <h3 className="text-4xl font-semibold text-[#403230] text-center">
+              {profileName}
+            </h3>
+            <p className="text-[#A39992] text-center">{position}</p>
           </div>
           <div>
-            <p>{children}</p>
+            <p className="font-inter text-center">{children}</p>
           </div>
         </div>
       </div>
