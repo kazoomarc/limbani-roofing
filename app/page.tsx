@@ -31,7 +31,7 @@ function Hero() {
     <div className="h-screen">
       <div className="relative h-full flex flex-row">
         <Image
-          src="/hero-image.png"
+          src="/hero-bg-image.png"
           alt="image of Limbani technician roofing an office"
           fill
           className="absolute inset-0 w-full "
