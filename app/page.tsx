@@ -31,8 +31,8 @@ export default function Home() {
 
 function Hero() {
   return (
-    <div className="h-screen">
-      <div className="relative flex flex-row h-full">
+    <div className="h-3/4 sm:h-screen">
+      <div className="relative flex flex-row _h-3/4 sm:h-full">
         <Image
           src="/hero-bg-image.png"
           alt="image of Limbani technician roofing an office"
@@ -41,13 +41,13 @@ function Hero() {
           objectFit="cover"
         />
         <div className="relative top-0 right-0 flex w-full _bg-gray-800/85 _bg-lime-400 ">
-          <div className="w-1/2"></div>
-          <div className="w-1/2 _bg-orange-600">
-            <div className="flex flex-col gap-y-6 max-w-[612px] pt-28">
-              <h1 className="font-bold text-white text-7xl/none">
+          <div className="w-1/4 sm:w-1/2"></div>
+          <div className="w-3/4 _bg-orange-600 sm:w-1/2">
+            <div className="flex flex-col gap-y-6 max-w-[612px] py-10 sm:pt-28">
+              <h1 className="text-5xl font-bold text-white md:text-7xl/none">
                 Limbani Roofing Specialists
               </h1>
-              <p className="text-white _lg:text-2xl font-inter text-wrap">
+              <p className="pr-4 text-white _lg:text-2xl font-inter text-wrap">
                 We are local roofing company that uses high quality material
                 manufactured locally and comes with a warranty.
               </p>
@@ -145,8 +145,10 @@ function Section({
   return (
     <div>
       <div className="flex flex-col items-center w-full mb-8">
-        <h2 className="text-4xl text-[#A39992] text-center">{heading}</h2>
-        <p className="text-5xl font-bold text-[#403230] max-w-3xl text-center">
+        <h2 className="text-2xl sm:text-4xl text-[#A39992] text-center">
+          {heading}
+        </h2>
+        <p className="text-3xl sm:text-5xl font-bold text-[#403230] max-w-3xl text-center">
           {subheading}
         </p>
       </div>
@@ -163,7 +165,7 @@ function WhyUs() {
         subheading="Roofing Services in Kasungu, Lilongwe, Dowa And Surrounding Areas."
       >
         <div className="flex justify-center w-full mb-8">
-          <p className="max-w-4xl text-center">
+          <p className="max-w-4xl px-4 sm:px-0 sm:text-center">
             We are Limbani Roofing Specialists, a roofing company that has been
             in business for more than 10 years. Our team is dedicated to
             providing top-quality roofing services with a focus on customer
@@ -174,7 +176,7 @@ function WhyUs() {
             needs.
           </p>
         </div>
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="flex flex-wrap justify-center gap-6 px-4 sm:px-0">
           <WhyUsCard
             Icon={<ClipboardIcon className="size-11 text-[#403230]" />}
             title="Free Survey & Quote"
@@ -212,19 +214,20 @@ function WhyUsCard({
   children?: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col items-center gap-4 w-90">
+    <div className="flex justify-start gap-4 md:items-center md:flex-col w-90">
       <div className="px-5 py-4 bg-yellow-500">{Icon}</div>
       <div>
-        <h3 className="text-center font-semibold text-4xl text-[#403230]">
+        <h3 className="md:text-center font-semibold text-4xl text-[#403230]">
           {title}
         </h3>
-        <p className="text-center font-inter max-w-80 text-base text-[#403230] text-wrap">
+        <p className="md:text-center font-inter max-w-80 text-base text-[#403230] text-wrap">
           {children}
         </p>
       </div>
     </div>
   );
 }
+
 function Services() {
   return (
     <div className="mb-28">
@@ -373,7 +376,7 @@ function Process() {
         heading="Never wonder what’s next"
         subheading="Our process make it easy"
       >
-        <div className="md:flex">
+        <div className="px-4 md:flex sm:px-0">
           <ProcessCard
             heading="Reach Out"
             icon={<EnvelopeIcon className="size-8 text-[#403230]" />}
@@ -418,13 +421,13 @@ function ProcessCard({
 }) {
   return (
     <div>
-      <div className="flex flex-col items-center gap-4 mb-10">
+      <div className="flex justify-start gap-4 mb-10 md:flex-col md:items-center">
         <div className="p-8 bg-yellow-500">{icon}</div>
-        <div className="flex flex-col items-center">
-          <h3 className="text-4xl font-semibold text-[#403230] text-center">
+        <div className="flex flex-col md:items-center">
+          <h3 className="text-4xl font-semibold text-[#403230] md:text-center">
             {heading}
           </h3>
-          <p className="font-inter text-[#403230] text-center">{children}</p>
+          <p className="font-inter text-[#403230] md:text-center">{children}</p>
         </div>
       </div>
     </div>
@@ -438,7 +441,7 @@ function Testimonials() {
         heading="We provide the best service for you"
         subheading="Our customers have a lot to say"
       >
-        <div className="gap-1 md:flex px-28">
+        <div className="gap-1 px-4 md:flex sm:px-6 md:px-10 lg:px-16 xl:px-20 2xl:px-28">
           <TestimonialCard
             bgImg="/testimonial-1.png"
             profile="/user-2.png"
@@ -510,13 +513,13 @@ function TestimonialCard({
         </div>
         <div className="flex flex-col items-center -mt-7">
           <div>
-            <h3 className="text-4xl font-semibold text-[#403230] text-center">
+            <h3 className="text-3xl sm:text-4xl font-semibold text-[#403230] text-center">
               {profileName}
             </h3>
             <p className="text-[#A39992] text-center">{position}</p>
           </div>
           <div>
-            <p className="text-center font-inter">{children}</p>
+            <p className="text-sm text-center font-inter">{children}</p>
           </div>
         </div>
       </div>
@@ -538,16 +541,16 @@ function Footer() {
 
   return (
     <div>
-      <div className="bg-[#403230]  p-28">
-        <div className="flex items-center justify-between mb-28">
+      <div className="bg-[#403230]  px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 2xl:px-28 py-28">
+        <div className="inline-flex justify-between flex-grow-0 w-full flex-start sm:items-center mb-28">
           <div className="flex flex-col-reverse">
-            <h2 className="text-5xl font-semibold text-white">
+            <h2 className="text-3xl font-semibold text-white sm:text-5xl">
               Need a roofing service?
             </h2>
-            <p className="text-4xl text-yellow-500">get in touch</p>
+            <p className="text-2xl text-yellow-500 sm:text-4xl">get in touch</p>
           </div>
-          <div className="px-8 py-4 bg-yellow-500">
-            <span className="text-[#403230] font-medium text-2xl">
+          <div className="inline-flex items-center px-4 py-4 bg-yellow-500 max-h-10 sm:px-8">
+            <span className="text-[#403230] font-medium text-lg sm:text-2xl text-nowrap">
               Get a Free Estimate
             </span>
           </div>
@@ -584,7 +587,7 @@ function Footer() {
           />
         </div>
       </div>
-      <footer className="flex justify-between items-center px-28 p-3 bg-[#2E2523]">
+      <footer className="flex justify-between items-center px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 2xl:px-28 p-3 bg-[#2E2523]">
         <a className="text-white">Built by Joel Mwala</a>
         <a className="text-white">facebook</a>
       </footer>
