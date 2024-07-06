@@ -572,18 +572,22 @@ function Footer() {
           <FooterCards
             heading="Visit our offices"
             icon={<HomeIcon className="size-8 text-[#403230]" />}
+            info="Nbilowilo Building, Kasungu"
           />
           <FooterCards
             heading="Make a Call"
             icon={<PhoneIcon className="size-8 text-[#403230]" />}
+            info="+265 889995588"
           />
           <FooterCards
             heading="Send us Email"
             icon={<EnvelopeIcon className="size-8 text-[#403230]" />}
+            info="limbaniroofing@gmail.com"
           />
           <FooterCards
             heading="Working Hours"
             icon={<ClockIcon className="size-8 text-[#403230]" />}
+            info="7am - 5pm"
           />
         </div>
       </div>
@@ -598,9 +602,11 @@ function Footer() {
 function FooterCards({
   icon,
   heading,
+  info,
 }: {
   icon?: React.ReactNode;
   heading?: string;
+  info?: string;
 }) {
   return (
     <div>
@@ -608,7 +614,7 @@ function FooterCards({
         <div className="flex items-center p-4 bg-yellow-500 grow-0">{icon}</div>
         <div className="flex flex-col">
           <h4 className="text-white text-[28px] -mb-2">{heading}</h4>
-          <p className="text-white font-inter">+265-889-995-588</p>
+          <p className="text-white font-inter">{info}</p>
         </div>
       </div>
     </div>
